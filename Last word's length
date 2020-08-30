@@ -1,0 +1,31 @@
+Given a string, find the length of the last word.
+
+Note: If there is just one word, then consider it to be the last word.
+
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+// Add any helper functions(if needed) above.
+int word_length(char* str) {    
+    
+    int i;
+    int lent;
+    int lastWordLength = 0;
+    
+    if (str != NULL) {
+            lent = strlen(str);
+    }
+    
+    if ((lent == 0) || (str == NULL)) {
+        return lastWordLength;
+    } else {
+        i = lent -1;
+
+        while ((*(str+i) != ' ') && (i >= 0)) {
+            i--;
+            lastWordLength++;
+        }
+        return lastWordLength;
+    }
+}
+

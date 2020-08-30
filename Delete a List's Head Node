@@ -1,0 +1,20 @@
+Write a function to delete the first node of a singly-linked list and return the head of the modified list. Be sure to deallocate the memory of the node!
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+listNode* delete_at_head(listNode* head){
+    
+    listNode *temp;
+    
+    if (head == NULL) {
+        return(head);
+    }
+    temp = head;
+    head = head->next;
+    free (temp);
+    return(head);
+    
+}
+

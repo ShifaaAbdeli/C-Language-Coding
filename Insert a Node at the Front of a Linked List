@@ -1,0 +1,27 @@
+Write a function to insert a node at the front of a singly-linked list and return the head of the modified list.
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+listNode* insert_at_head( listNode* head, int data){
+    
+
+    listNode *tmp;
+    
+    tmp = (void *) malloc(sizeof(listNode));
+    
+    if (head == NULL) {
+        tmp->value = data;
+        head = tmp;
+    } else {
+        tmp->value = head->value;
+        tmp->next = head->next;
+        head->value = data;
+        head->next = tmp;
+    }
+    
+    return head;
+    
+}
+

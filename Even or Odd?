@@ -1,0 +1,32 @@
+Implement a function to check in a single pass, if the given singly-linked list has an even or an odd number of nodes in it.
+If the list has an even number of nodes, return 1, else return 0.
+An Empty list has 0 nodes which makes the number of nodes in it even.
+
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+int is_list_even(listNode* head){
+
+    listNode *temp;
+    int nodeCount = 0;
+    
+    temp = (void *) malloc(sizeof(listNode));
+    temp = head;
+    if (temp == NULL) {
+        return 1;
+    }
+    
+    while(temp) {
+        nodeCount++;
+        temp = temp->next;
+    }
+    if (0 == (nodeCount%2)) {
+        return 1;
+    } else {
+        return 0;
+    }
+
+}
+

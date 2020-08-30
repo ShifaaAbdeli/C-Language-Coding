@@ -1,0 +1,27 @@
+Write a function to insert a node at the end of a singly-linked list. Return the head of the modified list.
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+listNode* insert_at_tail( listNode* headnode, int data){
+
+    listNode *temp;
+    
+    listNode *node = (listNode*) malloc(sizeof(listNode));
+    temp = headnode;
+    
+    while ((temp != NULL) && (temp->next != NULL)) {
+        temp = temp->next;
+    }
+    node->value = data;
+    node->next = NULL;
+    if(temp == NULL) {
+        headnode = node;
+    } else {
+         temp->next = node;
+    }
+        
+    return(headnode);
+}
+

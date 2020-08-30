@@ -1,0 +1,19 @@
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+void rotate_left(int arraylist[], int sz, int k)
+{
+    int i = 0;
+    int mod, temp;
+    
+    mod = k%sz;
+    while (i < mod) {
+        temp = arraylist[0];
+        for (int j = 0; j < sz-1; j++) {
+            arraylist[j] = arraylist[j+1];
+        }
+        arraylist[sz-1] = temp;
+        i++;
+    }
+}

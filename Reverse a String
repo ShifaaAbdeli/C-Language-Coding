@@ -1,0 +1,25 @@
+Write a function that takes in a string char* str and returns the reversed version of the string in char* output_string.
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+char* reverse_string (char* str){
+    char* output_string = NULL; 
+    /* Calculate length of the string */
+    int len = strlen(str);
+    /* allocate memory of size equal to the length of the given string */
+    output_string = (char *)malloc((len+1)*(sizeof(char)));   
+    // Add your code below this line. Do not modify any other code
+    int i = 0;
+    while (i<len) {
+        *(output_string + i) = *(str + len -1 -i);
+        i++;
+    }
+
+
+
+    // Add your code above this line. Do not modify any other code
+    return output_string;
+}
+

@@ -1,0 +1,25 @@
+
+Palindrome Tester - 16 August 2020 - Strings 
+Difficulty Level 1 Problem
+
+A palindrome is a string or sequence of characters that reads the same backward as forward. For example, "MADAM" is a palindrome. Write a function that takes in an input string: char* str and returns an int value of 1 if the input string is a palindrome, 0 otherwise.
+An empty string is considered a palindrome. You also need to account for the space character - i.e. "race car" should return 0 as read backward it is "rac ecar".
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+int is_string_palindrome(char* str) {
+    int i;
+    int len = strlen(str);
+    
+    for (i=0; i<= len/2; i++) {
+        if (str[i] == str[len-1 -i]) {
+            continue;
+        } else {
+            return 0;
+        }
+    }
+    return 1;
+}
+

@@ -1,0 +1,21 @@
+
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+void flip_vertical_axis(int n, int matrix[n][n]){
+
+    int r = n-1;
+    int m = n-1;
+    int i, j, tmp;
+    
+    for (j = 0; j <= r/2; j++) {
+        for (i = 0; i <= m; i++) {
+            tmp = matrix[i][j];
+            matrix[i][j] = matrix[i][m-j];
+            matrix[i][m-j] = tmp;
+        }
+    }
+    
+}
+

@@ -1,0 +1,22 @@
+Write a function that reverses an interger int x and returns the reversed number.
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+int reverse(int x) {
+    
+    int reverseNum =0;
+    int num;
+    
+    num = abs(x);
+    while( num > 0) {
+        reverseNum = reverseNum*10 + num%10;
+        num = num/10;
+    }
+    if (x < 0) {
+        reverseNum = (-1) *reverseNum;
+    }
+    return reverseNum;
+}
+

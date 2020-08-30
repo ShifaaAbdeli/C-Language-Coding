@@ -1,0 +1,27 @@
+Given an array of integers, write a method - max_gain - that returns the maximum gain. Maximum Gain is defined as the maximum difference between 2 elements in a list such that the larger element appears after the smaller element. If no gain is possible, return 0.
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+int max_gain(int arr[], int sz){
+    
+    int i;
+    int minArr = arr[0];
+    int max_gain = arr[1] - arr[0];
+    
+    for (i = 1; i < sz; i++) {
+        if (arr[i] - minArr > max_gain) {
+           max_gain = arr[i] - minArr;
+        }
+        
+        if (arr[i] < minArr) {
+            minArr = arr[i];
+        }
+    }
+    if (max_gain < 0) {
+        max_gain = 0;
+    }
+    return (max_gain);
+}
+

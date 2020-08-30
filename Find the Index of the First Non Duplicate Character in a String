@@ -1,0 +1,28 @@
+Find the index of the first non-duplicate character in a string. If no unique character is found, return -1 .
+
+// stdio.h, string.h have been included for this problem.
+// You don't need any other header files.
+
+// Add any helper functions(if needed) above.
+char first_non_repeating(char *str){
+    
+    int i, j;
+    int len =0;
+    int arrayIdx[15] = { };
+    
+    
+    len = strlen(str);
+
+    for (i = 0; i < len; i++) {
+        for(j = 0; j <len; j++) {
+            if (*(str+i) == *(str+j)) {
+                arrayIdx[i]++;
+            }
+        }
+        if (arrayIdx[i] == 1) {
+            return (i);
+        }
+    }
+    return (-1);
+}
+
